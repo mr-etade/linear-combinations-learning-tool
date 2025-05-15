@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Combinations - IBM111 Mathematics</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="school-header">
+            <h1>IBM111 Mathematics</h1>
+            <h2>Week 12 - Linear Combinations</h2>
+        </div>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>What is a Linear Combination?</h2>
+            <p>A linear combination is an expression constructed from a set of terms by multiplying each term by a constant and adding the results.</p>
+            <p>For vectors \( \vec{a}, \vec{b}, \ldots, \vec{n} \) and scalars \( c_1, c_2, \ldots, c_n \), the linear combination is:</p>
+            <p class="math-formula">\( c_1 \vec{a} + c_2 \vec{b} + \ldots + c_n \vec{n} \)</p>
+            <div class="interactive-hint" data-tooltip="Try changing the vectors and scalars in the interactive demo below to see how linear combinations work!">
+                <span>💡 Hover for tip</span>
+            </div>
+        </section>
+
+        <section id="interactive-demo">
+            <h2>Interactive 2D Vector Addition</h2>
+            <div class="demo-container">
+                <div id="vector-plot"></div>
+                <div class="controls">
+                    <div class="vector-input">
+                        <h3>Vector \( \vec{a} \) <span class="vector-color" style="background-color: #E41A1C;"></span></h3>
+                        <label>x: <input type="number" id="v1x" value="2" step="0.5"></label>
+                        <label>y: <input type="number" id="v1y" value="1" step="0.5"></label>
+                    </div>
+                    <div class="vector-input">
+                        <h3>Vector \( \vec{b} \) <span class="vector-color" style="background-color: #377EB8;"></span></h3>
+                        <label>x: <input type="number" id="v2x" value="1" step="0.5"></label>
+                        <label>y: <input type="number" id="v2y" value="2" step="0.5"></label>
+                    </div>
+                    <div class="scalar-inputs">
+                        <h3>Scalars</h3>
+                        <label>\( c_1 \): <input type="range" id="c1-range" min="-3" max="3" step="0.5" value="1">
+                            <input type="number" id="c1" value="1" step="0.5"></label>
+                        <label>\( c_2 \): <input type="range" id="c2-range" min="-3" max="3" step="0.5" value="1">
+                            <input type="number" id="c2" value="1" step="0.5"></label>
+                    </div>
+                    <div class="button-group">
+                        <button id="animate-btn" class="btn-primary">Animate Combination</button>
+                        <button id="step-btn" class="btn-secondary">Step-by-Step</button>
+                        <button id="reset-btn" class="btn-warning">Reset</button>
+                    </div>
+                </div>
+            </div>
+            <div class="combination-result">
+                <h3>Linear Combination Result: <span class="vector-color" style="background-color: #4DAF4A;"></span></h3>
+                <p id="combination-formula">\( \vec{v} = 1 \cdot (2,1) + 1 \cdot (1,2) = (3,3) \)</p>
+                <div id="vector-properties">
+                    <p>Magnitude: <span id="magnitude">3.61</span></p>
+                    <p>Angle: <span id="angle">45.00&deg;</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="practice-problems">
+            <h2>Practice Problems</h2>
+            <div class="problem">
+                <p>Express the vector (5,7) as a linear combination of (1,2) and (3,1).</p>
+                <div class="solution-area">
+                    <label>\( c_1 \): <input type="number" id="p1-c1"></label>
+                    <label>\( c_2 \): <input type="number" id="p1-c2"></label>
+                    <button id="check-p1" class="btn-primary">Check Answer</button>
+                    <button id="hint-p1" class="btn-secondary">Get Hint</button>
+                    <button id="solve-p1" class="btn-secondary">Show Solution</button>
+                    <div id="p1-hint" class="hint-box" style="display: none;">
+                        <p>Set up the equation: \( c_1(1) + c_2(3) = 5 \) and \( c_1(2) + c_2(1) = 7 \)</p>
+                    </div>
+                    <div id="p1-solution" class="solution-box" style="display: none;">
+                        <ol>
+                            <li>Set up the system: \( 1c_1 + 3c_2 = 5 \) and \( 2c_1 + 1c_2 = 7 \)</li>
+                            <li>Solve the first equation for \( c_1 \): \( c_1 = 5 - 3c_2 \)</li>
+                            <li>Substitute into second equation: \( 2(5-3c_2) + c_2 = 7 \rightarrow 10-6c_2 + c_2 = 7 \rightarrow -5c_2 = -3 \rightarrow c_2 = 0.6 \)</li>
+                            <li>Then \( c_1 = 5 - 3(0.6) = 3.2 \)</li>
+                            <li>Check: \( 3.2(1,2) + 0.6(3,1) = (5,7) \)</li>
+                        </ol>
+                    </div>
+                    <p id="p1-feedback" class="feedback"></p>
+                </div>
+            </div>
+            <div class="problem">
+                <p>Can the vector (4,6) be expressed as a linear combination of (1,1.5) and (2,3)?</p>
+                <div class="solution-area">
+                    <button class="mcq-btn btn-primary" data-answer="yes">Yes</button>
+                    <button class="mcq-btn btn-primary" data-answer="no">No</button>
+                    <button id="hint-p2" class="btn-secondary">Explain</button>
+                    <div id="p2-explanation" class="hint-box" style="display: none;">
+                        <p>Notice that (2,3) is exactly \( 2 \times (1,1.5) \). The vectors are linearly dependent, but (4,6) lies on the same line.</p>
+                    </div>
+                    <p id="p2-feedback" class="feedback"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="activity-section">
+            <h2>Class Activity</h2>
+            <p>Try solving these problems from our class activity:</p>
+            <ol class="activity-problems">
+                <li>Express \(\begin{bmatrix} 7 \\ 5 \end{bmatrix}\) as a linear combination of \(\begin{bmatrix} 1 \\ 1 \end{bmatrix}\) and \(\begin{bmatrix} 2 \\ 0 \end{bmatrix}\).</li>
+                <li>Solve using linear combination: \(\begin{cases} 3x + 2y = 7 \\ x - y = 1 \end{cases}\)</li>
+                <li>Can \(\begin{bmatrix} 2 \\ 3 \end{bmatrix}\) be written as a linear combination of \(\begin{bmatrix} 1 \\ 1 \end{bmatrix}\) and \(\begin{bmatrix} 1 \\ 2 \end{bmatrix}\)?</li>
+            </ol>
+            <a href="solutions.html" class="solutions-link">View Solutions to Activity</a>
+        </section>
+
+        <section id="key-points">
+            <h2>Key Points to Remember</h2>
+            <ul>
+                <li>A vector is a linear combination of others if it can be written using them with scalar coefficients</li>
+                <li>Not all vectors can be expressed as linear combinations of given vectors</li>
+                <li>The coefficients tell us "how much" of each vector to use</li>
+                <li>Linear combinations appear everywhere in math and science</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Western Pacific University - IBM Department</p>
+        <p>Instructor: Mr. Eremas Tade</p>
+    </footer>
+
+    <div id="tooltip" class="tooltip"></div>
+</body>
+</html>

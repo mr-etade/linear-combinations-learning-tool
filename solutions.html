@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Solutions - Linear Combinations</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <div class="school-header">
+            <h1>IBM111 Mathematics</h1>
+            <h2>Activity Solutions - Linear Combinations</h2>
+        </div>
+    </header>
+
+    <main>
+        <section id="solutions">
+            <h2>Solutions to Linear Combination Activity</h2>
+
+            <div class="solution">
+                <h3>Problem 1</h3>
+                <p>Express \(\begin{bmatrix} 7 \\ 5 \end{bmatrix}\) as a linear combination of \(\begin{bmatrix} 1 \\ 1 \end{bmatrix}\) and \(\begin{bmatrix} 2 \\ 0 \end{bmatrix}\).</p>
+                <div class="solution-steps">
+                    <p><strong>Solution:</strong></p>
+                    <p>We need to find scalars \(c_1\) and \(c_2\) such that:</p>
+                    <p>\(c_1\begin{bmatrix}1\\1\end{bmatrix} + c_2\begin{bmatrix}2\\0\end{bmatrix} = \begin{bmatrix}7\\5\end{bmatrix}\)</p>
+                    <p>This gives us the system:</p>
+                    <p>\(1c_1 + 2c_2 = 7\)</p>
+                    <p>\(1c_1 + 0c_2 = 5\)</p>
+                    <p>From the second equation: \(c_1 = 5\)</p>
+                    <p>Substitute into first equation: \(5 + 2c_2 = 7\) \(\Rightarrow 2c_2 = 2\) \(\Rightarrow c_2 = 1\)</p>
+                    <p><strong>Answer:</strong> \(5\begin{bmatrix}1\\1\end{bmatrix} + 1\begin{bmatrix}2\\0\end{bmatrix} = \begin{bmatrix}7\\5\end{bmatrix}\)</p>
+                </div>
+            </div>
+
+            <div class="solution">
+                <h3>Problem 2</h3>
+                <p>Solve using linear combination:</p>
+                <p>\(\begin{cases} 3x + 2y = 7 \\ x - y = 1 \end{cases}\)</p>
+                <div class="solution-steps">
+                    <p><strong>Solution:</strong></p>
+                    <p>Multiply the second equation by 2:</p>
+                    <p>\(2x - 2y = 2\)</p>
+                    <p>Now add to the first equation:</p>
+                    <p>\(3x + 2y = 7\)</p>
+                    <p>\(2x - 2y = 2\)</p>
+                    <p>_________</p>
+                    <p>\(5x = 9\) \(\Rightarrow x = \frac{9}{5}\)</p>
+                    <p>Substitute back into second equation:</p>
+                    <p>\(\frac{9}{5} - y = 1\) \(\Rightarrow y = \frac{4}{5}\)</p>
+                    <p><strong>Answer:</strong> \(x = \frac{9}{5}, y = \frac{4}{5}\)</p>
+                </div>
+            </div>
+
+            <div class="solution">
+                <h3>Problem 3</h3>
+                <p>Can \(\begin{bmatrix} 2 \\ 3 \end{bmatrix}\) be written as a linear combination of \(\begin{bmatrix} 1 \\ 1 \end{bmatrix}\) and \(\begin{bmatrix} 1 \\ 2 \end{bmatrix}\)?</p>
+                <div class="solution-steps">
+                    <p><strong>Solution:</strong></p>
+                    <p>We need to check if there exist \(c_1\) and \(c_2\) such that:</p>
+                    <p>\(c_1\begin{bmatrix}1\\1\end{bmatrix} + c_2\begin{bmatrix}1\\2\end{bmatrix} = \begin{bmatrix}2\\3\end{bmatrix}\)</p>
+                    <p>This gives the system:</p>
+                    <p>\(c_1 + c_2 = 2\)</p>
+                    <p>\(c_1 + 2c_2 = 3\)</p>
+                    <p>Subtract first equation from second:</p>
+                    <p>\(c_2 = 1\)</p>
+                    <p>Then \(c_1 = 1\)</p>
+                    <p>Check: \(1\begin{bmatrix}1\\1\end{bmatrix} + 1\begin{bmatrix}1\\2\end{bmatrix} = \begin{bmatrix}2\\3\end{bmatrix}\) ✓</p>
+                    <p><strong>Answer:</strong> Yes, with coefficients \(c_1 = 1\) and \(c_2 = 1\)</p>
+                </div>
+            </div>
+
+            <div class="solution">
+                <h3>Problem 4</h3>
+                <p>Can \(\begin{bmatrix} 5 \\ 3 \\ 4 \end{bmatrix}\) be written as a linear combination of \(\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}\), \(\begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix}\), and \(\begin{bmatrix} 2 \\ 2 \\ 0 \end{bmatrix}\)?</p>
+                <div class="solution-steps">
+                    <p><strong>Solution:</strong></p>
+                    <p>Let \(c_1\), \(c_2\), and \(c_3\) be scalars such that:</p>
+                    <p>
+                    \[
+                    c_1\begin{bmatrix}1\\0\\1\end{bmatrix} + c_2\begin{bmatrix}0\\1\\2\end{bmatrix} + c_3\begin{bmatrix}2\\2\\0\end{bmatrix} = \begin{bmatrix}5\\3\\4\end{bmatrix}
+                    \]
+                    </p>
+                    <p>This leads to the system of equations:</p>
+                    <p>
+                    \[
+                    \begin{aligned}
+                    c_1 + 2c_3 &= 5 \quad \text{(1)} \\
+                    c_2 + 2c_3 &= 3 \quad \text{(2)} \\
+                    c_1 + 2c_2 &= 4 \quad \text{(3)}
+                    \end{aligned}
+                    \]
+                    </p>
+                    <p>From equation (1):</p>
+                    <p>\[
+                    c_1 = 5 - 2c_3 \tag{4}
+                    \]</p>
+                    <p>From equation (2):</p>
+                    <p>\[
+                    c_2 = 3 - 2c_3 \tag{5}
+                    \]</p>
+                    <p>Substitute equations (4) and (5) into equation (3):</p>
+                    <p>
+                    \[
+                    (5 - 2c_3) + 2(3 - 2c_3) = 4
+                    \]
+                    \[
+                    5 - 2c_3 + 6 - 4c_3 = 4
+                    \]
+                    \[
+                    11 - 6c_3 = 4
+                    \]
+                    \[
+                    -6c_3 = -7
+                    \Rightarrow c_3 = \frac{7}{6}
+                    \]
+                    </p>
+                    <p>Now substitute back to find \(c_1\) and \(c_2\):</p>
+                    <p>
+                    \[
+                    c_1 = 5 - 2c_3 = 5 - \frac{14}{6} = \frac{30}{6} - \frac{14}{6} = \frac{16}{6} = \frac{8}{3}
+                    \]
+                    \[
+                    c_2 = 3 - 2c_3 = 3 - \frac{14}{6} = \frac{18}{6} - \frac{14}{6} = \frac{4}{6} = \frac{2}{3}
+                    \]
+                    </p>
+                    <p><strong>Final answer:</strong></p>
+                    <p>
+                    \[
+                    \boxed{
+                    c_1 = \frac{8}{3}, \quad
+                    c_2 = \frac{2}{3}, \quad
+                    c_3 = \frac{7}{6}
+                    }
+                    \]
+                    </p>
+                    <p>Yes, the vector \(\begin{bmatrix}5\\3\\4\end{bmatrix}\) can be written as a linear combination of the given vectors.</p>
+                </div>
+            </div>
+            
+            <div class="solution">
+                <h3>Problem 5</h3>
+                <p>Find \(3\begin{bmatrix}1\\2\end{bmatrix} + 2\begin{bmatrix}3\\1\end{bmatrix}\).</p>
+                <div class="solution-steps">
+                    <p><strong>Solution:</strong></p>
+                    <p>\(3\begin{bmatrix}1\\2\end{bmatrix} = \begin{bmatrix}3\\6\end{bmatrix}\)</p>
+                    <p>\(2\begin{bmatrix}3\\1\end{bmatrix} = \begin{bmatrix}6\\2\end{bmatrix}\)</p>
+                    <p>Sum: \(\begin{bmatrix}3\\6\end{bmatrix} + \begin{bmatrix}6\\2\end{bmatrix} = \begin{bmatrix}9\\8\end{bmatrix}\)</p>
+                    <p><strong>Answer:</strong> \(\begin{bmatrix}9\\8\end{bmatrix}\)</p>
+                </div>
+            </div>
+
+            <div class="solution">
+                <h3>Problem 6</h3>
+                <p>Given that \(\vec{a} = \begin{bmatrix}1\\2\end{bmatrix}\) and \(\vec{b} = \begin{bmatrix}3\\4\end{bmatrix}\). Plot \(2\vec{a} + \vec{b}\) on a graph.</p>
+                <div class="solution-steps">
+                    <p><strong>Solution:</strong></p>
+                    <p>First calculate \(2\vec{a} + \vec{b}\):</p>
+                    <p>\(2\begin{bmatrix}1\\2\end{bmatrix} = \begin{bmatrix}2\\4\end{bmatrix}\)</p>
+                    <p>\(\begin{bmatrix}2\\4\end{bmatrix} + \begin{bmatrix}3\\4\end{bmatrix} = \begin{bmatrix}5\\8\end{bmatrix}\)</p>
+                    <p>The resulting vector is \(\begin{bmatrix}5\\8\end{bmatrix}\).</p>
+                    <p>On a graph, this would be an arrow from (0,0) to (5,8).</p>
+                    <div id="problem6-graph"></div>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">&larr; Back to Main Page</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 IBM111 Mathematics - Prepared by Mr. Eremas Tade</p>
+    </footer>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const width = 400, height = 400;
+            const margin = { top: 20, right: 20, bottom: 30, left: 30 };
+            const innerWidth = width - margin.left - margin.right;
+            const innerHeight = height - margin.top - margin.bottom;
+
+            const svg = d3.select("#problem6-graph")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            svg.append("defs").append("marker")
+                .attr("id", "arrowhead")
+                .attr("viewBox", "0 -5 10 10")
+                .attr("refX", 8)
+                .attr("refY", 0)
+                .attr("markerWidth", 6)
+                .attr("markerHeight", 6)
+                .attr("orient", "auto")
+                .append("path")
+                .attr("d", "M0,-5L10,0L0,5")
+                .attr("fill", "#999");
+
+            const xScale = d3.scaleLinear().domain([-12, 12]).range([0, innerWidth]);
+            const yScale = d3.scaleLinear().domain([-12, 12]).range([innerHeight, 0]);
+
+            svg.append("g").attr("class", "grid").attr("transform", `translate(0,${innerHeight})`)
+                .call(d3.axisBottom(xScale).tickSize(-innerHeight).tickFormat("").ticks(24));
+            svg.append("g").attr("class", "grid")
+                .call(d3.axisLeft(yScale).tickSize(-innerWidth).tickFormat("").ticks(24));
+
+            svg.append("g").attr("class", "axis").attr("transform", `translate(0,${innerHeight})`)
+                .call(d3.axisBottom(xScale));
+            svg.append("g").attr("class", "axis")
+                .call(d3.axisLeft(yScale));
+
+            svg.append("line").attr("x1", xScale(0)).attr("y1", yScale(12))
+                .attr("x2", xScale(0)).attr("y2", yScale(-12)).attr("stroke", "#000").attr("stroke-width", 1);
+            svg.append("line").attr("x1", xScale(-12)).attr("y1", yScale(0))
+                .attr("x2", xScale(12)).attr("y2", yScale(0)).attr("stroke", "#000").attr("stroke-width", 1);
+
+            svg.append("line").attr("class", "vector-path")
+                .attr("x1", xScale(0)).attr("y1", yScale(0))
+                .attr("x2", xScale(5)).attr("y2", yScale(8))
+                .attr("stroke", "#4DAF4A").attr("stroke-width", 3)
+                .attr("marker-end", "url(#arrowhead)");
+
+            svg.append("foreignObject")
+                .attr("x", xScale(2.5))
+                .attr("y", yScale(4) - 20)
+                .attr("width", 100)
+                .attr("height", 40)
+                .append("xhtml:div")
+                .style("color", "#4DAF4A")
+                .style("font", "16px 'Arial'")
+                .html("\\( 2\\vec{a} + \\vec{b} \\)");
+
+                MathJax.typeset(); // Trigger rendering
+
+        });
+    </script>
+</body>
+</html>
